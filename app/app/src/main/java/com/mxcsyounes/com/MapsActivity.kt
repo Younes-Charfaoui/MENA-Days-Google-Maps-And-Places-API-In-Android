@@ -93,15 +93,14 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     private fun bindMapFragment() {
-        val mapFragment = supportFragmentManager
-            .findFragmentById(R.id.map) as SupportMapFragment
+        val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
         this.googleMap = googleMap
-        val sydney = LatLng(28.0339, 1.6596)
-        this.googleMap.addMarker(MarkerOptions().position(sydney).title("Marker in Algeria"))
-        this.googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        val algeria = LatLng(28.0339, 1.6596)
+        this.googleMap.addMarker(MarkerOptions().position(algeria).title("Marker in Algeria"))
+        this.googleMap.moveCamera(CameraUpdateFactory.newLatLng(algeria))
     }
 }
